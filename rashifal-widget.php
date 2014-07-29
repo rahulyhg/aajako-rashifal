@@ -8,7 +8,7 @@ class Aj_Rashifal_Widget extends WP_Widget
 
   public function widget( $args, $instance )
   {
-    $site_url                             = 'http://api.aajako.com/rashifal';
+    $site_url                             = 'http://api.aajako.com/rashifal/?for=widget&wp_ver='.AJ_RASHIFAL_VER;
     
     $ch                                   = curl_init();
     curl_setopt($ch, CURLOPT_URL, $site_url);
@@ -17,16 +17,19 @@ class Aj_Rashifal_Widget extends WP_Widget
     curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
     $f                                    = curl_exec($ch);
     curl_close($ch);
-
     $d                                    = json_decode($f);
+    $f                                    = $f?true:false;
     ?>
     <div class="aj-box">
       <?php if($instance['showtitle']){ ?>
       <div class="aj-title"><?php echo $instance['title'];?></div>
       <div class="aj-divider"></div>
       <?php } ?>
+      <?php if($f && $d->notice){ ?>
+      <div class="ajh-notice"><?php echo $d->notice; ?></div>
+      <?php } ?>
       <div class="aj-content" style="height:<?php echo is_numeric($instance['height'])?$instance['height'].'px':$instance['height']; ?>">
-      <?php foreach( $d as $n=>$c ){ 
+      <?php if($f): foreach( $d->content as $n=>$c ){ 
         if(!$instance['fullcontent'] )
         {
           if(function_exists('mb_strlen')) 
@@ -43,7 +46,7 @@ class Aj_Rashifal_Widget extends WP_Widget
         ?>
         <div class="aj-c-body"><strong><?php echo $n; ?>:</strong> <?php echo $c; ?></div>
         <div class="aj-hr"></div>
-      <?php } ?>
+      <?php } endif; ?>
       </div>
       <div class="aj-copy">
         <a class="ap" href="http://aajako.com/">&copy; aajako.com</a>

@@ -5,9 +5,11 @@ Plugin URI: http://aajako.com/rashifal/
 Description: &#2310;&#2332;&#2325;&#2379; &#2352;&#2366;&#2358;&#2367;&#2347;&#2354;&#2325;&#2379; &#2347;&#2368;&#2337; &#2340;&#2346;&#2366;&#2312;&#2325;&#2379; &#2360;&#2366;&#2311;&#2337;&#2348;&#2366;&#2352;&#2350;&#2366;
 Author: Aajako
 Author URI: https://profiles.wordpress.org/aajako
-Version: 1.0
+Version: 1.1
 License: GPL version 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
+
+define('AJ_RASHIFAL_VER','1.1');
 
 if(!class_exists('Aj_Rashifal'))
 {
