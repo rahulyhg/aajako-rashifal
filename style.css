@@ -1,0 +1,54 @@
+/* CSS Document */
+.aj-box{
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 0px 2px #eee;
+  border-radius: 5px;
+  max-width:250px;
+  font-size:14px;
+  margin:10px auto;
+}
+.clear{ clear:both; }
+.aj-hr{border-bottom: 1px solid #eee;
+height: 1px;
+background-color: #ddd;
+margin: 5px 0;}
+.aj-title{
+  background-color:#f90;
+  padding:5px 10px;
+  border-radius:5px 5px 0 0;
+  color:#fff;
+  }
+
+.aj-content{
+  margin:10px;
+  overflow:auto;
+}
+.aj-show{ display:none; }
+.aj-show-more{ font-size:11px; }
+.aj-at{ color:#369; font-weight:700; }
+.aj-content .aj-read{ color: #aaa; }
+.aj-more{ text-align:center; }
+
+.aj-copy{
+  padding:3px 10px;
+  }
+.aj-copy .get{
+  float:right;
+  }
+.aj-copy a,.aj-copy{
+  font-size:10px;
+  color:#ccc;
+  }
+.aj-copy .ap{ float:left; }
+
+.ajh-notice{
+   color: #FFF;
+  background-color: #F30;
+  padding: 5px 10px;
+  box-shadow: 0 0 2px #aaa;  
+  border-radius: 5px;
+  margin: 1px -5px;
+  }
+
+
