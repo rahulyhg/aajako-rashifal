@@ -8,13 +8,13 @@ class Aj_Rashifal_Widget extends WP_Widget
 
   public function widget( $args, $instance )
   {
-    $site_url                             = 'http://api.aajako.com/rashifal/?for=widget&wp_ver='.AJ_RASHIFAL_VER;
+    $site_url                             = 'http://api.aajako.com/rashifal/?type=json&wp_ver='.AJ_HOROSCOPE_VER;
     
     $ch                                   = curl_init();
     curl_setopt($ch, CURLOPT_URL, $site_url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'#wp_ver='.AJ_HOROSCOPE_VER);
     $f                                    = curl_exec($ch);
     curl_close($ch);
     $d                                    = json_decode($f);
@@ -26,10 +26,10 @@ class Aj_Rashifal_Widget extends WP_Widget
       <div class="aj-divider"></div>
       <?php } ?>
       <?php if($f && $d->notice){ ?>
-      <div class="ajh-notice"><?php echo $d->notice; ?></div>
+      <div class="aj-notice"><?php echo $d->notice; ?></div>
       <?php } ?>
       <div class="aj-content" style="height:<?php echo is_numeric($instance['height'])?$instance['height'].'px':$instance['height']; ?>">
-      <?php if($f): foreach( $d->content as $n=>$c ){ 
+      <?php if($f): $j=0; foreach( $d->content as $n=>$c ){ 
         if(!$instance['fullcontent'] )
         {
           if(function_exists('mb_strlen')) 
@@ -44,9 +44,9 @@ class Aj_Rashifal_Widget extends WP_Widget
         }
          
         ?>
-        <div class="aj-c-body"><strong><?php echo $n; ?>:</strong> <?php echo $c; ?></div>
+        <div class="aj-c-body"><strong><?php echo $n; ?>:</strong><i style="background-position:0px -<?php echo ($d->stars[$j]-1)*11; ?>px" class="aj-star luck-<?php echo $d->stars[$j]; ?>"></i><br /> <?php echo $c; ?></div>
         <div class="aj-hr"></div>
-      <?php } endif; ?>
+      <?php ++$j; } endif; ?>
       </div>
       <div class="aj-copy">
         <a class="ap" href="http://aajako.com/">&copy; aajako.com</a>

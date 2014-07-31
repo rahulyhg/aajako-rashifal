@@ -4,15 +4,15 @@ Donate link: http://aajako.com
 Tags: aajako,rashifal,nepali,horoscope,sidebar,widgets
 Requires at least: 2.8
 Tested up to: 3.9.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Aajako Rashifal(आजको राशिफल), Daily Horoscope in Nepali, on your sidebar
+Aajako Rashifal(आजको राशिफल), Daily Horoscope in Nepali, on your sidebar with star ratings
 
 == Description ==
 
-This plugin displays daily horoscope in nepali language using <a href="http://aajako.com/">aajako.com</api> api.
+This plugin displays daily horoscope in nepali language using <a href="http://aajako.com/">aajako.com</api> api. Also it displays todays star ratings for each sign.
 
 Also, you can use `http://api.aajako.com/rashifal/` api on your programming code alone to display nepali horoscope (rashifal).
 
@@ -49,13 +49,19 @@ you can message us if you have any problem regarding this plugin or anything to 
 
 == Changelog ==
 
+= 1.2 =
+* Star ratings added for a sign.
+
 = 1.1 =
-* Some bug fixed.
+* Fixed small bug.
 
 = 1.0 =
 * First version of plugin.
 
 == Upgrade Notice ==
+
+= 1.2 =
+Star ratings added for a sign.
 
 = 1.1 =
 Small bug fixed.
