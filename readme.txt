@@ -12,7 +12,7 @@ Aajako Rashifal(आजको राशिफल), Daily Horoscope in Nepali, on 
 
 == Description ==
 
-This plugin displays daily horoscope in nepali language using <a href="http://aajako.com/">aajako.com</api> api. Also it displays todays star ratings for each sign.
+This plugin displays daily horoscope in nepali language using <a href="http://aajako.com/">aajako.com</a> api. Also it displays todays star ratings for each sign.
 
 Also, you can use `http://api.aajako.com/rashifal/` api on your programming code alone to display nepali horoscope (rashifal).
 
