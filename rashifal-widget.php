@@ -8,16 +8,17 @@ class Aj_Rashifal_Widget extends WP_Widget
 
   public function widget( $args, $instance )
   {
-    $site_url                             = 'http://api.aajako.com/rashifal/?type=json&wp_ver='.AJ_HOROSCOPE_VER;
+    $site_url                             = 'http://api.aajako.com/rashifal/?type=json&wp_ver='.AJ_RASHIFAL_VER;
     
     $ch                                   = curl_init();
     curl_setopt($ch, CURLOPT_URL, $site_url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'#wp_ver='.AJ_HOROSCOPE_VER);
+    curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'#wp_ver='.AJ_RASHIFAL_VER);
     $f                                    = curl_exec($ch);
     curl_close($ch);
     $d                                    = json_decode($f);
+ 
     $f                                    = $f?true:false;
     ?>
     <div class="aj-box">
