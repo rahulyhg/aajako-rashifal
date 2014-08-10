@@ -49,7 +49,7 @@ you can message us if you have any problem regarding this plugin or anything to 
 
 == Changelog ==
 
-= 1.2 =
+= 1.3 =
 * Lazy loading feature.
 
 = 1.2 =
