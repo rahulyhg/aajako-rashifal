@@ -59,6 +59,13 @@ margin: 5px 0;}
   vertical-align:middle;
   margin-left:5px;
   }
+.aj-loader{
+  text-align:center;
+  }
+.aj-c-body > strong{
+  text-transform:capitalize;
+  }
+
 
 
 
