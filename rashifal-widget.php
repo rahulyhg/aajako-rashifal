@@ -121,7 +121,7 @@ class Aj_Rashifal_Widget extends WP_Widget
           $(this).prev().toggle();
          });
        
-       $.post('<?php echo admin_url('admin-ajax.php'); ?>',{action:'aj_rashifal'},function(_r){
+       $.post('<?php echo admin_url('admin-ajax.php'); ?>',{action:'aj_rashifal',_c:'<?php echo urldecode($_SERVER['REQUEST_URI']); ?>'},function(_r){
          _c.each(function(index, elm) {
           var t = $(this),i=0;
           t.find('.aj-loader').hide();

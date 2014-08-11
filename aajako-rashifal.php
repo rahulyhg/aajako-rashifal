@@ -51,7 +51,7 @@ if(!class_exists('Aj_Rashifal'))
       curl_setopt($ch, CURLOPT_URL, $site_url);
       curl_setopt($ch, CURLOPT_HEADER, 0);
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
-      curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'#wp_ver='.AJ_HOROSCOPE_VER);
+      curl_setopt($ch, CURLOPT_REFERER, $_SERVER['HTTP_HOST'].urlencode($_POST['_c']).'#wp_ver='.AJ_HOROSCOPE_VER);
       curl_exec($ch);
       curl_close($ch);
       die;  
