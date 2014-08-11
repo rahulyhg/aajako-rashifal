@@ -31,6 +31,8 @@ if(!class_exists('Aj_Rashifal'))
     
     public function register_rashifal_widget()
     {
+      global $_aj_purl;
+      $_aj_purl                           = $this->plugin_url;
       include 'rashifal-widget.php';
       register_widget( 'Aj_Rashifal_Widget' );
     }

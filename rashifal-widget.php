@@ -52,7 +52,7 @@ class Aj_Rashifal_Widget extends WP_Widget
         <div class="aj-hr"></div>
       <?php ++$j; } else: ?>
         <div class="aj-loader">
-          <img src="<?php echo $GLOBALS['_ajh_purl']; ?>loader.gif" height="7" width="75" />
+          <img src="<?php echo $GLOBALS['_aj_purl']; ?>loader.gif" height="7" width="75" />
         </div>
       <?php endif; ?>
       </div>
