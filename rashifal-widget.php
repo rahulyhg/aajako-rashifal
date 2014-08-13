@@ -83,7 +83,7 @@ class Aj_Rashifal_Widget extends WP_Widget
                                             'height'          => 'auto',
                                             'showtitle'       => true,
                                             'fullcontent'     => false,
-                                            'ajax_loading'    => true
+                                            'ajax_loading'    => false
                                             ) );
     ?>
     <p>
